@@ -1,30 +1,16 @@
 package alisson.consumindo_APIs_Externas.service;
 
 import alisson.consumindo_APIs_Externas.model.Client;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class ClientServiceImpl implements ClientService{
-    @Override
-    public Iterable<Client> findAll() {
-        return null;
-    }
+import java.util.List;
+import java.util.Optional;
 
-    @Override
-    public Client findById(Long id) {
-        return null;
-    }
+@Repository
+public interface ClientServiceImpl extends JpaRepository<Client, Integer> {
+    List<Client> findAll();
+    Optional<Client> findById(Long id);
 
-    @Override
-    public void insert(Client client) {
-
-    }
-
-    @Override
-    public void update(Long id, Client client) {
-
-    }
-
-    @Override
-    public void delete(Long id) {
-
-    }
+    void deleteById(Long id);
 }
